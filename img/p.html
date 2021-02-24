@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+/* 
+トップページ
+モーダル 
+文字崩れ
+スマホ文字どうする？*/
+
+/* all */
+@charset "UTF-8";
+@media screen and (max-width: 1219px) {
+  .is-pc {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1220px) {
+  .is-sp {
+    display: none;
+  }
+}
+
+body{
+    font-family: “Times New Roman”, “游明朝”, “Yu Mincho”, “游明朝体”, “YuMincho”, “ヒラギノ明朝 Pro W3”, “Hiragino Mincho Pro”, “HiraMinProN-W3”, “HGS明朝E”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+.example{/*親div*/
+    position: relative;/*相対配置*/
+    }
+  /* 画像の上にテキスト */
+.top-logo{
+      position: absolute;
+      display: flex;
+    }
+.example img {
+        width: 100%;
+        }
+
+
+.text-upright{
+    display: flex;
+    writing-mode: vertical-rl;
+    align-items: center;
+}
+/* effect */
+.effect-fade {
+    opacity : 0;
+    /* transform : translate(0, 45px); */
+    transition : all 2000ms;
+}
+
+.effect-fade.effect-scroll {
+    opacity : 1;
+    transform : translate(0, 0);
+}
+
+img {
+    width:100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    }
+
+
+
+
+@media screen and (max-width: 800px){
+    img {
+        width:100%;
+        max-width: 100%;
+        height: auto;
+        }
+}
+
+
+
+
+/* header */
+.header-top{
+    color: #fff;
+    height: 1079px;
+}
+.header-bg{
+    height: 683px;
+}
+.top-logo{
+    width: 100%;
+}
+.header-title{
+    width: 100%;
+    display: flex;
+}
+.header-title h1{
+    margin-left: 18px;
+    letter-spacing: 0.3em;
+}
+
+/* header nav{
+    width: 220px;
+    margin-top: 20px;
+    margin-left: 12px;
+} */
+/* header ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+} */
+.header-reserve{
+    color: #fff;
+    text-align: right;
+    margin-top: 18px;
+    padding: 12px 18px 6px 18px;
+    background-color: #978F10;
+    text-decoration: none;
+    margin-bottom: 16px;
+    margin-left: 24px;
+
+    /* transform: translate(-50%, -50%);
+    height: auto;
+    z-index: 11;
+    line-height: 6rem;
+    letter-spacing: .2em;
+    position: absolute;
+    top: 47%;
+    left: 69.5%; */
+    
+}
+.header-reserve img{
+    width: 20px;
+    height: 20px;
+}
+.header-text{
+    line-height: 2.0;
+    font-size: 36px;
+
+    transform: translate(-50%, -50%);
+    height: auto;
+    z-index: 11;
+    line-height: 6rem;
+    letter-spacing: .2em;
+    position: absolute;
+    top: 47%;
+    left: 69.5%;
+}
+.header-text-upright{
+    /* display: flex; */
+    writing-mode: vertical-rl;
+    /* align-items: right;
+    margin-right: 24px; */
+        
+}
+
+
+
+/* .right{
+    text-align: right;
+    width: 60%;
+} */
+/* .reserve-img{
+    background-image: url(./img/calender.png);
+} */
+
+
+
+    .header-logo-img{
+        background-position: right 10% bottom 10%;
+        width: 30px;
+        height: 30px;
+        background-image: url(./img/logo01.png);
+        background-size: contain;
+        background-color: rgba(255, 255, 255, 0);
+        color: #fff;
+        background-repeat: no-repeat;
+        opacity: 1;
+        margin-top: 29px;
+        margin-left: 20px;
+    }
+    .header-bottom-text{
+        line-height: 2.0;
+        width: 100%;
+    }
+    /* .header-bottom-text p{
+        width: 100%;
+    } */
+    .header-bottom-text1{
+        font-size: 28px;
+        padding-top: 64px;
+    }
+    .header-bottom-text2{
+        font-size: 24px;
+        padding-top: 149px;        
+    }
+    .header-bottom-text3{
+        font-size: 16px;
+        padding-top: 149px; 
+    }
+    .header-bottom-text4{
+        font-size: 22px;
+        padding-top: 443px; 
+    }
+/* img */
+    .main_imgBox {
+        height: 1079px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+      .main_logo {
+        z-index:11;
+        position: absolute;
+        top:5%;
+        left:5%;
+        transform:translate(-5%,-5%);
+        width:10%;
+        height:auto;
+    }
+    .top-logo{
+        z-index:11;
+        position: absolute;
+        
+        width:100%;
+        height:auto;
+    }
+    
+      .main_img {
+        z-index:10;
+        opacity: 0;
+        width: 100%;
+        height: 1079px;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        -webkit-animation: anime 18s 0s infinite;
+        animation: anime 18s 0s infinite; }
+    
+        .main_img:nth-of-type(2) {
+          -webkit-animation-delay: 6s;
+          animation-delay: 6s; }
+    
+        .main_img:nth-of-type(3) {
+          -webkit-animation-delay: 12s;
+          animation-delay: 12s; }
+    
+    
+    
+      .main_imgM {
+        opacity: 0;
+        width:100%;
+        height:1079px;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        -webkit-animation: anime 18s 0s infinite;
+        animation: anime 18s 0s infinite; }
+    
+        .main_imgM:nth-of-type(2) {
+          -webkit-animation-delay: 6s;
+          animation-delay: 6s; }
+    
+        .main_imgM:nth-of-type(3) {
+          -webkit-animation-delay: 12s;
+          animation-delay: 12s; }
+    
+    @keyframes anime {
+        0% {
+            opacity: 0;
+        }
+        2% {
+            opacity: 1;
+        }
+        33% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+            -webkit-transform: scale(1.2);
+             transform: scale(1.2);
+                        z-index:9;
+        }
+        100% { opacity: 0 }
+    }
+    
+    @-webkit-keyframes anime {
+        0% {
+          opacity: 0;
+        }
+        2% {
+          opacity: 1;
+        }
+        33% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+          -webkit-transform: scale(1.2);
+                  transform: scale(1.2);
+          z-index: 9;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @media screen and (max-width: 1200px){
+        .header-top{
+            height: 700px;
+      }
+      .main_img{
+        width: 100%;
+        height: 700px;
+   
+    }
+    .main_imgBox {
+        height: 700px;
+    }
+}
+    
+    @media screen and (max-width: 800px){
+        .header-bottom{
+            height: 800px;
+        }
+        .header-bg{
+            height: 800px;
+        }
+        .header-bottom-text{
+            writing-mode: horizontal-tb;
+            margin-top: 48px;
+        }
+        .header-bottom-text p{
+            margin: 0 auto;
+            text-align: center;
+        }
+        .header-top{
+            height: 600px;
+      }
+      .main_img{
+        width: 100%;
+        height: 600px;
+   
+    }
+    .main_imgBox {
+        height: 600px;
+    }
+        
+        
+        
+    }
+    /* @media screen and (max-width: 700px){
+        .header-top{
+            height: 500px;
+      }
+      .main_img{
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+   
+    }
+    .main_imgBox {
+        height: 500px;
+    }
+    } */
+
+    /* hamburger-menu */
+        
+    .menu-btn {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        height: 60px;
+        width: 60px;
+        justify-content: center;
+        align-items: center;
+        z-index: 90;
+        background-color: #000;
+    }
+    .menu-btn span,
+    .menu-btn span:before,
+    .menu-btn span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background-color: #ffffff;
+        position: absolute;
+    }
+    .menu-btn span:before {
+        bottom: 8px;
+    }
+    .menu-btn span:after {
+        top: 8px;
+    }
+    #menu-btn-check:checked ~ .menu-btn span {
+        background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+    }
+    #menu-btn-check:checked ~ .menu-btn span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    #menu-btn-check:checked ~ .menu-btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    #menu-btn-check {
+        display: none;
+    }
+    .menu-content {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 80;
+        background-color: #fff;
+    }
+    .menu-content ul {
+        padding: 140px 30px 0;
+    }
+    .menu-content ul li {
+        /* border-bottom: solid 1px #ffffff; */
+        list-style: none;
+    }
+    .menu-content ul li a {
+        display: block;
+        width: 100%;
+        font-size: 24px;
+        box-sizing: border-box;
+        color:#ffffff;
+        text-decoration: none;
+        padding: 40px 15px;
+        position: relative;
+    }
+    @media screen and (max-height: 400px){
+        .menu-content ul li a{
+            color: #000;
+        }
+    }
+    /* .menu-content ul li a::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-top: solid 2px #ffffff;
+        border-right: solid 2px #ffffff;
+        transform: rotate(45deg);
+        position: absolute;
+        right: 11px;
+        top: 16px;
+    } */
+    .menu-content {
+        width: 50%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 100%;/*leftの値を変更してメニューを画面外へ*/
+        z-index: 80;
+        background-color: #000;
+        transition: all 0.5s;/*アニメーション設定*/
+    }
+    
+    #menu-btn-check:checked ~ .menu-content {
+        left: 50%;/*メニューを画面内へ*/
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+     
+     
+     
+    /* ◎ここから */
+    * {
+        box-sizing: border-box;
+    }
+     
+    
+     
+     
+    /* header */
+    .header {
+        
+        transition: all .5s;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+    }
+    .header.change-color {
+        background-color: #000;
+    }
+    
+    @media screen and (max-width: 600px){
+        .header-logo-img{
+            width: 24px;
+        height: 24px;
+        margin-left: 6px;
+        }
+        .header-title h1{
+            margin-left: 8px;
+            letter-spacing: 0.1em;
+            font-size: 24px;
+            margin-top: 24px;
+        }
+    }
+    
+  
+  
+
+/* main */
+/* recommend */
+.recommend{
+    margin-top: 36px;
+}
+.recommend-box{
+    display: flex;
+    width: 100%;
+    margin-top: 72px;
+}
+.recommend-box img{
+    width: 53%;
+    height: 545px;
+    opacity: 1;
+    
+}
+.recommend-text{
+    display: block;
+    width: 47%;
+    margin: 14px;
+    padding: 24px 72px;
+    line-height: 1.5;
+}
+.recommend-text h2{
+    font-size: 36px;
+}
+.recommend-text p, a{
+    font-size: 16px;
+}
+.recommend-text a{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 20px 44px;
+}
+.order-img{
+    order: 2;
+}
+.order-text{
+    order: 1;
+}
+
+@media screen and (max-width: 800px){
+    .recommend{
+        margin-top: 0;
+    }
+    .recommend-box{
+        display: block;
+        width: 100%;
+        margin-top: 0;
+        
+    }
+    .recommend-box img{
+        width: 100vw;
+        height: 400px;
+        opacity: 1;
+        text-align: center;
+        align-items: center;
+    }
+    .recommend-text{
+        width: 95vw;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+}
+
+/* plan */
+.plan{
+    height: 775px;
+}
+.plan-bg{
+    height: 775px; 
+}
+.plan-container{
+    position: absolute;/*絶対配置*/
+    width: 100%;
+
+    
+top: 0;
+left: 0;
+}
+.plan h2{
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 66px;
+}
+.plan-logo{
+    top: 0px;
+left: 0px;
+width: 40px;
+height: 40px;
+background-image: url(./img/logo02.png);
+background-size: contain;
+background-color: rgba(0,0,0,0);
+background-repeat: no-repeat;
+background-position-y: bottom;
+opacity: 1;
+padding-top: 60px;
+margin: 0 auto;
+}
+.plan-img{
+    height: 230px;
+    width: 100%;
+    background-image: url(menu01.jpg);
+    background-size: cover;
+}
+
+
+.plan-boxes{
+    display: flex;
+    justify-content: space-around;
+}
+.plan-box{
+    width: 30%;
+}
+
+.plan-text{
+    width: 90%;
+    /* background-color: red; */
+    margin: 0 auto;
+}
+.plan-text h3{
+    font-size: 20px;
+}
+
+.plan-text p{
+    font-size: 16px;
+}
+
+@media screen and (max-width: 900px){
+    .plan{
+        height: 1850px;
+    }
+    .plan-img{
+        width: 100vw;
+        height: 300px;
+        opacity: 1;
+        text-align: center;
+        align-items: center;
+    }
+    .plan-boxes{
+        display: block;
+    }
+    .plan-box{
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .plan-bg{
+        height: 1850px;
+        object-fit: cover;
+
+    }
+    .plan-text{
+        margin: 36px auto;
+        width: 80%;
+        height: 150px;
+        /* font-size: 20px; */
+    }
+}
+
+/* news */
+.news{
+    margin-bottom: 60px;
+}
+.news-logo{
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+    background-image: url(./img/logo02.png);
+    background-size: contain;
+    background-color: rgba(0,0,0,0);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    opacity: 1;
+    padding-top: 60px;
+    margin: 0 auto;
+}
+.news h2{
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 46px;
+}
+.news-link{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    margin: 0 auto 49px auto;
+
+}
+.news-link a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+.news-boxes{
+    margin: 0 auto;
+}
+.news-box{
+    display: flex;
+    justify-content: space-around;
+   
+
+}
+.news-category{
+    display: flex;
+    width: 45%;
+    height: 130px;
+    background-color: #F6F6F6;
+    margin: 0 20px 20px 20px;
+
+   
+}
+.news-text-box{
+    margin: 7px 15px 7px 0;
+    width: 388px;
+}
+
+.news-img1{
+    margin: 15px;
+    width: 100px;
+    height: 100px;
+    background-image: url(./img/news01.jpg);
+    background-size: contain;
+}
+.news-img2{
+    margin: 15px;
+    width: 100px;
+    height: 100px;
+    background-image: url(./img/news02.jpg);
+    background-size: contain;
+}
+
+@media screen and (max-width: 800px){
+    .news-box{
+        display: block;
+    }
+    .news-category{
+        width: 90%;
+        height: 150px;
+        background-color: #F6F6F6;
+        margin: 36px auto;
+    }
+    .news-text-box{
+        margin: 5px 15px 5px 0;
+        width: 388px;
+    }
+    .img {
+        height: auto;
+     }
+     .news-img1, .news-img2{
+        margin: 24px;
+    }
+    
+}
+
+/* access */
+.access{
+    height: 1300px;
+}
+.access-bg{
+    height: 1300px;
+    object-fit: cover;
+}
+.access h2{
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 46px;
+}
+.access-box{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+}
+.access-box img{
+    height: 330px;
+    width: 50%;
+    margin-top: 24px;
+}
+.access-text{
+    margin: 0 auto 16px 83px;
+
+}
+.access-map{
+    margin: 69px auto 110px auto; 
+    text-align: center;
+    align-items: center;
+
+}
+.access-map iframe{
+    width: 818px; 
+    height: 592px;
+}
+@media screen and (max-width: 900px){
+    .access-map iframe{
+        width: 668px; 
+        height: 492px;
+    }
+}
+@media screen and (max-width: 800px){
+    .access{
+        height: 1400px;
+    }
+    .access-bg{
+        height: 1400px;
+    }
+    .access-box{
+        display: block;
+        width: 100%;
+    }
+    .access-box img{
+        width: 100vw;
+        height: 300px;
+        opacity: 1;
+        text-align: center;
+        align-items: center;
+    }
+    .access-text{
+        width: 60%;
+        text-align: center;
+        margin: 32px auto;
+    }
+    .access-map iframe{
+        width: 70%; 
+        height: 292px;
+    }
+}
+
+/* footer */
+.footer-top img{
+    height: 570px;
+}
+.footer-link{
+/* display: flex; */
+
+/* テキストを縦書きに指定 */
+writing-mode: vertical-rl;
+
+/* 左右中央揃え */
+align-items: right;
+list-style: none;
+margin: 32px auto 12px auto;
+
+}
+.footer-link a{
+    color: black;
+    text-decoration: none;
+    line-height: 3.4;
+    letter-spacing: 1.5em;
+    font-size: 18px;
+}
+.footer-text{
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 61px;
+}
+.footer-text h1{
+    font-size: 36px;
+    letter-spacing: 0.5em;
+    margin-bottom: 72px;
+}
+.footer-bottom{
+    background-color: #000;
+    color: #fff;
+    height: 60px;
+    
+}
+.footer-bottom p{
+    font-size: 12px;
+    text-align: center;
+    margin: 23px auto 25px auto;
+}
+footer{
+    background-color: #000;
+}
+
+    
+    </style>
+</head>
+<body style="margin: 0;">
+    <header class="header">
+        <!-- <div> -->
+            <!-- header1 -->
+            <div class="header-top">
+                <div class="example">
+            <div class="main_imgBox">
+                <div class="top-logo">
+                    <div class="header-title">
+                    <div class="header-logo-img"></div>
+                <h1>石井花壇</h1>
+                <div class="hamburger-menu">
+                    <input type="checkbox" id="menu-btn-check">
+                    <label for="menu-btn-check" class="menu-btn"><span></span></label>
+                    <!--ここからメニュー-->
+                    <div class="menu-content">
+                        <ul>
+                            <li>
+                                <a href="#">お部屋</a>
+                            </li>
+                            <li>
+                                <a href="#">お料理</a>
+                            </li>
+                            <li>
+                                <a href="#">温泉</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--ここまでメニュー-->
+                </div>
+                <!-- <div class="right"> -->
+                <a class="header-reserve" href=""><img src="calender.png" alt=""> <span>宿泊予約</span></a>
+                <!-- </div> -->
+            </div>
+            </div>
+        </header>
+            <!-- <p class="header-text header-text-upright">
+                        
+                頑張る人の<br>
+                頑張らない時間
+            </p> -->
+        
+                  <img src="mainbg01.jpg" class="main_img">
+                  <img src="mainbg02.jpg" class="main_img">
+                  <img src="mainbg03.jpg" class="main_img">
+                        
+           
+                
+        
+                
+                  </div>
+                    
+                </div>
+            </div>
+            <!-- header2 -->
+            <section class="header-bottom">
+            <div class="example">
+                <img src="bg.jpg" class="header-bg">
+                <div class="plan-container text-upright header-bottom-text effect-fade">
+                    
+                    <p> 
+                        <span class="header-bottom-text1">
+                        温 海 温 泉 の<br>
+                        </span>
+                        <span class="header-bottom-text2">
+                        美 し さ に 癒 や さ れ て<br><br><br>
+                        </span>
+                        <span class="header-bottom-text3">
+                        東 北 の 奥 座 敷 で あ る 温 海 温 泉 郷<br></span>
+                        <span class="header-bottom-text3">
+                        開 湯 は 約 １ ３ ０ ０ 年 前 と さ れ 、 役 小 角 が<br></span>
+                        <span class="header-bottom-text3">
+                        発 見 し た と 伝 え ら れ ま す<br></span>
+                        <span class="header-bottom-text3">
+                        石 井 花 壇 は 江 戸 よ り 続 く 由 緒 あ る 旅 館 で<br></span>
+                        <span class="header-bottom-text3">
+                        ク ラ シ ッ ク な 作 り の 中 に 大 正 ロ マ ン あ ふ れ る<br></span>
+                        <span class="header-bottom-text3">
+                        内 装 を 残 し て お り ま す<br><br><br></span>
+                        <span class="header-bottom-text3">
+                        圧 倒 的 癒 や し の 空 間 で<br></span>
+                        <span class="header-bottom-text3">
+                        頑 張 る 現 代 人 に<br></span>
+                        <span class="header-bottom-text3">
+                        頑 張 ら な い 圧 倒 的 な 非 日 常 を ご 提 供 し ま す<br><br><br></span>
+                        <span class="header-bottom-text4">
+                        石 井 花 壇</span>                    
+                    </p>
+              </div>
+            </div>
+            </section>
+            
+    
+        <!-- </div> -->
+        <main>
+            <!-- recommend -->
+            <section class="recommend">
+                <!-- recommend oheya -->
+                <div>
+                    <div class="recommend-box effect-fade">
+                    <!-- <div class="recommend-img img-oheya"></div> -->
+                    <img src="oheya-top.jpg" alt="">
+                    <div class="recommend-text">
+                        <h2 class="effect-fade">喧騒から離れた空間<br> 心落ち着く至極のひととき</h2><br>
+                        <p class="effect-fade">
+                            まるで時が止まったかのような、圧倒的な静寂のなかで、<br> 
+                            ひたすらにゆったりと…。 <br>
+                            最高級の「何もしない時間」をお過ごしください。
+                        </p><br><br>
+                        <a href="" class="effect-fade">お部屋について</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- recommend menu -->
+                <div>
+                    <div class="recommend-box effect-fade">
+                        <img src="menu-top.jpg" alt="" class="order-img">
+                    <div class="recommend-text order-text">
+                        <h2 class="effect-fade">喧騒から離れた空間<br> 心落ち着く至極のひととき</h2><br>
+                        <p class="effect-fade">
+                            まるで時が止まったかのような、圧倒的な静寂のなかで、<br> 
+                            ひたすらにゆったりと…。 <br>
+                            最高級の「何もしない時間」をお過ごしください。
+                        </p><br><br>
+                        <a href="" class="effect-fade">お部屋について</a>
+                        </div>
+                        <!-- <div class="recommend-img img-menu"></div> -->
+                    </div>
+                </div>
+                <!-- recommend onsen -->
+                <div>
+                    <div class="recommend-box effect-fade">
+                    <!-- <div class="recommend-img img-onsen"></div> -->
+                    <img src="onsen-top.jpg" alt="">
+                    <div class="recommend-text">
+                        <h2 class="effect-fade">喧騒から離れた空間<br> 心落ち着く至極のひととき</h2><br>
+                        <p class="effect-fade">
+                            まるで時が止まったかのような、圧倒的な静寂のなかで、<br> 
+                            ひたすらにゆったりと…。 <br>
+                            最高級の「何もしない時間」をお過ごしください。
+                        </p><br><br>
+                        <a href="" class="effect-fade">お部屋について</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- plan -->
+            <section class="plan">
+                <div class="example">
+                    <img src="./img/bg02.jpg" alt="" class="plan-bg">
+                    <div class="plan-container effect-fade">
+                    <div class="plan-logo"></div>
+                    <h2 class=" effect-fade">おすすめご宿泊プラン</h2>
+                    <div class="plan-boxes">
+                        <!-- plan recommend1 -->
+                    <div class="plan-box">   
+                        <img src="./img/menu01.jpg" class="plan-img effect-fade">
+                        <div class="plan-text effect-fade">
+                            <h3 class="effect-fade">朝食付きプラン、日本近海で取れたのどぐろを朝食として…</h3>
+                            <p class="effect-fade">
+                                最高級と称されるのどぐろ、正式には「アカムツ」と呼ばれる魚、味は独特の上品な味わいで、焼いても煮ても美味
+                            </p>
+                        </div>
+                    </div>
+                        <!-- plan recommend2 -->
+                    <div class="plan-box">
+                        <img src="./img/menu02.jpg" class="plan-img effect-fade">
+                        <div class="plan-text effect-fade">
+                            <h3 class="effect-fade">朝食付きプラン、日本近海で取れたのどぐろを朝食として…</h3>
+                            <p class="effect-fade">
+                                最高級と称されるのどぐろ、正式には「アカムツ」と呼ばれる魚、味は独特の上品な味わいで、焼いても煮ても美味
+                            </p>
+                        </div>
+                    </div>
+                        <!-- plan recommend3 -->
+                    <div class="plan-box">
+                        <img src="./img/menu03.jpg" class="plan-img effect-fade">
+                        <div class="plan-text effect-fade">
+                            <h3 class="effect-fade">朝食付きプラン、日本近海で取れたのどぐろを朝食として…</h3>
+                            <p class="effect-fade">
+                                最高級と称されるのどぐろ、正式には「アカムツ」と呼ばれる魚、味は独特の上品な味わいで、焼いても煮ても美味
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                
+                
+    
+            </section>
+            <!-- news -->
+            <section class="news effect-fade">
+                <div class="news-logo  effect-fade"></div>
+                <h2 class=" effect-fade">お知らせ</h2>
+                <div class="news-link effect-fade">
+                <a href="">営業情報</a>
+                <a href="">その他</a>
+                </div>
+                <div class="news-boxes">
+                    <!-- news-top -->
+                    <div class="news-box  effect-fade">
+                        <div class="news-category">
+                            <img src="./img/news01.jpg" class="news-img1">
+                            <div class="news-text-box">
+                            <p class="news-date">2020.12.24</p>
+                            <p class="news-text">年末最後の営業日は27日になります。</p>
+                            </div>
+                        </div>
+                        <div class="news-category">
+                            <img src="./img/news02.jpg" class="news-img2">
+                            <div class="news-text-box">
+                            <p class="news-date">2020.12.20</p>
+                            <p class="news-text">年末最後の営業日のお知らせ</p>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- news-center -->
+                    <div class="news-box effect-fade">
+                        <div class="news-category">
+                            <img src="./img/news02.jpg" class="news-img2">
+                           <div class="news-text-box">
+                            <p class="news-date">2020.12.16</p>
+                            <p class="news-text">12.21は臨時休業とさせていただきますので、よろしくお願いします。</p>
+                        </div>
+                        </div>
+                        <div class="news-category">
+                            <img src="./img/news01.jpg" class="news-img1">
+                        <div class="news-text-box">
+                            <p class="news-date">2020.12.14</p>
+                            <p class="news-text">年末最後の営業日のお知らせ</p>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- news-bottom -->
+                    <div class="news-box effect-fade">
+                        <div class="news-category">
+                            <img src="./img/news01.jpg" class="news-img1">
+                        <div class="news-text-box">
+                            <p class="news-date">2020.12.07</p>
+                            <p class="news-text">和室の改装を行いますため、12.10はお休み させていただきます。</p>
+                        </div>
+                        </div>
+                        <div class="news-category">
+                            <img src="./img/news02.jpg" class="news-img2">
+                            <div class="news-text-box">
+                            <p class="news-date">2020.12.01</p>
+                            <p class="news-text">年末最後の営業日のお知らせ</p>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+    
+            </section>
+            <!-- access -->
+            <section class="access">
+                    <div class="example">
+                        <img src="./img/bg.jpg" alt="" class="access-bg">
+                        <div class="plan-container  effect-fade">
+                        <div class="plan-logo effect-fade"></div>
+                        <h2 class=" effect-fade">アクセス</h2>
+                        <div class="access-box">
+                            <img src="./img/access.jpg" class="access-img effect-fade">
+                            <div class="access-text">
+                                <p class="effect-fade">住所</p>
+                                <p class="effect-fade">〒000-0000</p>
+                                <p class="effect-fade"> 山形県鶴岡市xxxxxxxxxx</p>
+                                <p class="effect-fade">TEL/FAX</p>
+                                <p class="effect-fade">000-0000-0000/00-0000-0000</p>
+                                <p class="effect-fade">営業時間</p>
+                                <p class="effect-fade">14:00-23:00</p>
+                                <p class="effect-fade">＊4名以上のご予約の場合は、最寄り駅の「鶴岡駅」より送迎が可能ですので、 ご連絡ください。</p>
+    
+                            </div>
+    
+                        </div>
+                        <div class="access-map effect-fade">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d399278.7570105528!2d139.50508799350249!3d38.57143509023468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8c752ece99152b%3A0xc6ea0016956290d7!2z5bGx5b2i55yM6ba05bKh5biC!5e0!3m2!1sja!2sjp!4v1614134637526!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    
+                        </div>
+                    </div>
+                    
+                    
+            </section>
+    
+        </main>
+    
+        <!-- footer -->
+        <footer>
+            <section class="footer-top">
+                <div class="example">
+                    <img src="./img/bg3.jpg" alt="">
+                    <div class="plan-container effect-fade">
+                        <ul class="footer-link  effect-fade"> 
+                            <li><a href="">お部屋</a></li>
+                            <li><a href="">お料理</a></li>
+                            <li><a href="">温泉</a></li>
+                        </ul>
+                        <div class="plan-logo  effect-fade"></div>
+                        <div class="footer-text">
+                        <h1 class=" effect-fade">石井花壇</h1>
+                    
+                    <p class=" effect-fade">〒000-0000&nbsp;&nbsp;&nbsp;山形県鶴岡市xxxxxxxxxxx</p>
+                    <p class=" effect-fade">TEL.000-0000-0000&nbsp;&nbsp;&nbsp;FAX.00-0000-0000</p>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <section class="footer-bottom">
+                <p>Copyright © 石井花壇 All Rights Reserved.</p>
+    
+            </section>
+        </footer>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.min.js"></script>
+           <script>
+              window.onload = function() {
+      scroll_effect();
+    
+      $(window).scroll(function(){
+       scroll_effect();
+      });
+    
+      function scroll_effect(){
+       $('.effect-fade').each(function(){
+        var elemPos = $(this).offset().top;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll > elemPos - windowHeight){
+         $(this).addClass('effect-scroll');
+        }
+       });
+      }
+    };
+    
+    'use strict'; 
+     
+    jQuery(window).on('scroll', function () {
+     
+     if (jQuery('.header').height() < jQuery(this).scrollTop()) { 
+    jQuery('.header').addClass('change-color'); }
+     else {
+     jQuery('.header').removeClass('change-color'); } });
+    
+    
+    
+           </script>
+    
+        
+    
+</body>
+</html>
